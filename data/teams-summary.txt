@@ -1,11 +1,11 @@
       team    total_experience  total_salary    total_3points   
- ATL    : 1   Min.   : NA      Min.   : 56.29   Min.   : 519.0  
- BOS    : 1   1st Qu.: NA      1st Qu.: 85.59   1st Qu.: 620.0  
- BRK    : 1   Median : NA      Median : 92.72   Median : 718.0  
- CHI    : 1   Mean   :NaN      Mean   : 92.29   Mean   : 737.8  
- CHO    : 1   3rd Qu.: NA      3rd Qu.:102.93   3rd Qu.: 805.8  
- CLE    : 1   Max.   : NA      Max.   :127.25   Max.   :1140.0  
- (Other):24   NA's   :30                                        
+ ATL    : 1   Min.   : 39.00   Min.   : 56.29   Min.   : 519.0  
+ BOS    : 1   1st Qu.: 59.00   1st Qu.: 85.59   1st Qu.: 620.0  
+ BRK    : 1   Median : 67.50   Median : 92.72   Median : 718.0  
+ CHI    : 1   Mean   : 74.13   Mean   : 92.29   Mean   : 737.8  
+ CHO    : 1   3rd Qu.: 83.00   3rd Qu.:102.93   3rd Qu.: 805.8  
+ CLE    : 1   Max.   :145.00   Max.   :127.25   Max.   :1140.0  
+ (Other):24                                                     
  total_2points  total_freehthrows  total_points  total_off_rebounds
  Min.   :1754   Min.   : 998      Min.   :6360   Min.   :521.0     
  1st Qu.:2104   1st Qu.:1240      1st Qu.:7906   1st Qu.:711.0     
