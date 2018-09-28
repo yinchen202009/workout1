@@ -12,7 +12,8 @@ nba <-read.csv('https://raw.githubusercontent.com/ucb-stat133/stat133-fall-2018/
 
 #experience
 typeof(nba$experience)
-nba$experience[nba$experience == "R"] <- 0
+nba$experience <- as.character(nba$experience)
+nba$experience[nba$experience == "R"] <- "0"
 nba$experience <- as.integer(nba$experience)
 
 #salary
