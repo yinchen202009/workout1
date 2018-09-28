@@ -1,0 +1,134 @@
+---
+title: "Data Wrangling and Visualization"
+author: "Yin Chen Wan"
+date: "9/27/2018"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = '../images/')
+```
+
+#1) File Structure
+```{bash, eval = FALSE}
+cd Desktop/stat133/stat133-hws-fall18/
+mkdir workout1
+cd workout1/
+git init
+git remote add origin https://github.com/yinchen202009/workout1.git
+git status
+touch README.md
+mkdir data
+mkdir code
+mkdir output
+mkdir report
+git status
+git add README.md
+git commit -m "New README.md file"
+git status
+```
+
+##Download the data
+```{bash, eval=FALSE}
+cd data
+curl -O https://raw.githubusercontent.com/ucb-stat133/stat133-fall-2018/master/data/nba2018.csv
+git status
+git add nba2018.csv
+git status
+git commit -m "Downloaded nba data"
+```
+
+#2) Create a README.md File
+After adding description of the workout to the file and saving it:
+```{bash, eval = FALSE}
+git status
+cd ..
+git add README.md 
+git commit -m "Added description of the HW"
+git status
+```
+
+#3) Create a data dictionary
+```{bash, eval = FALSE}
+pwd
+cd data
+touch nba2018-dictionary.md
+git status
+git add nba2018-dictionary.md
+git status
+git commit -m "Created data dictionary"
+git status
+```
+
+##Saving the dictionary after adding contents
+```{bash, eval=FALSE}
+git status
+git add nba2018-dictionary.md
+git status
+git commit -m "Added description of data to dictionary"
+```
+
+#4) Data Preparation
+Done in "make-teams-table.R"
+
+#5) Ranking of Teams
+```{r}
+
+#ranking of teams according to salary
+rank <- select(teams, team, total_salary)
+rank <- arrange(rank, desc(total_salary))
+head(rank)
+mean(teams$total_salary)
+
+library(ggplot2)
+ggplot(rank, ) +
+  geom_bar(aes(x= reorder(team, total_salary), y= total_salary), stat='identity') +
+    coord_flip() +
+  labs(y = "Salary (in millions)", x= "NBA Team", 
+       title= "Graph of NBA Team against their Salaries(in millions") +
+  geom_hline(yintercept=  92.29469, linetype, color='red')
+
+#teams ranked by total points
+rankpoints <- select(teams, team, total_points)
+rankpoints <- arrange(rankpoints, desc(total_points))
+head(rankpoints)
+mean(teams$total_points)
+
+library(ggplot2)
+ggplot(rankpoints, ) +
+  geom_bar(aes(x= reorder(team, total_points), y= total_points), stat='identity') +
+    coord_flip() +
+  labs(y = "Total Points", x= "NBA Team", 
+       title= "Graph of NBA Team against their Total Points") +
+  geom_hline(yintercept=  8114.4, linetype, color='red')
+
+#teams ranked by Total efficiency
+rankeff <- select(teams, team, total_eff)
+rankeff <- arrange(rankeff, desc(total_eff))
+head(rankeff)
+mean(teams$total_eff)
+
+library(ggplot2)
+ggplot(rankeff, ) +
+  geom_bar(aes(x= reorder(team, total_eff), y= total_eff), stat='identity') +
+    coord_flip() +
+  labs(y = "Total Efficiency", x= "NBA Team", 
+       title= "Graph of NBA Team against their Total Efficiency") +
+  geom_hline(yintercept=  152.3035, linetype, color='red')
+
+#teams ranked by Total experience
+rankexp <- select(teams, team, total_experience)
+rankexp <- arrange(rankexp, desc(total_experience))
+head(rankexp)
+mean(teams$total_experience)
+
+library(ggplot2)
+ggplot(rankexp, ) +
+  geom_bar(aes(x= reorder(team, total_experience), y= total_experience), stat='identity') +
+    coord_flip() +
+  labs(y = "Total Experience", x= "NBA Team", 
+       title= "Graph of NBA Team against their Total Experience") +
+  geom_hline(yintercept=  74.13333, linetype, color='red')
+```
+
+#Comments and Reflections
