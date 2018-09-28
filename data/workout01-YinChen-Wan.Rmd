@@ -81,7 +81,7 @@ head(rank)
 mean(teams$total_salary)
 
 library(ggplot2)
-ggplot(rank, ) +
+ggplot(rank) +
   geom_bar(aes(x= reorder(team, total_salary), y= total_salary), stat='identity') +
     coord_flip() +
   labs(y = "Salary (in millions)", x= "NBA Team", 
@@ -95,7 +95,7 @@ head(rankpoints)
 mean(teams$total_points)
 
 library(ggplot2)
-ggplot(rankpoints, ) +
+ggplot(rankpoints) +
   geom_bar(aes(x= reorder(team, total_points), y= total_points), stat='identity') +
     coord_flip() +
   labs(y = "Total Points", x= "NBA Team", 
@@ -109,7 +109,7 @@ head(rankeff)
 mean(teams$total_eff)
 
 library(ggplot2)
-ggplot(rankeff, ) +
+ggplot(rankeff) +
   geom_bar(aes(x= reorder(team, total_eff), y= total_eff), stat='identity') +
     coord_flip() +
   labs(y = "Total Efficiency", x= "NBA Team", 
@@ -123,8 +123,8 @@ head(rankexp)
 mean(teams$total_experience)
 
 library(ggplot2)
-ggplot(rankexp, ) +
-  geom_bar(aes(x= reorder(team, total_experience), y= total_experience), stat='identity') +
+ggplot(rankexp) +
+  geom_bar(aes(x= reorder(team, total_experience), y=total_experience), stat='identity') +
     coord_flip() +
   labs(y = "Total Experience", x= "NBA Team", 
        title= "Graph of NBA Team against their Total Experience") +
